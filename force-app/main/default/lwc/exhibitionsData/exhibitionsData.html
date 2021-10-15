@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="ExhibitionData" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+           <template for:each={venues} for:item="venue">
+              <div key={venue.Id}>
+                 {venue.venueName}, {venue.exhibitionName}
+              </div>
+           </template>
+        </div>
+     </lightning-card>
+</template>
