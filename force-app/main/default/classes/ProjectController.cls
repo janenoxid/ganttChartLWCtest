@@ -1,9 +1,9 @@
-public with sharing class ExhibitionController {
+public with sharing class ProjectController {
     @AuraEnabled
     public static List<Opportunity> getOpportunities(){
         try {
             return [
-                SELECT Name, StartDate, EndDate, Account, Exhibition
+                SELECT Name, Start_Date__c, End_Date__c, StageName, Account, Exhibition__c
                 FROM Opportunity
                 WITH SECURITY ENFORCED
                 ORDER BY Name
@@ -13,7 +13,7 @@ public with sharing class ExhibitionController {
             throw new AuraHandledException(e.getMessage());
         }
     }
-    // public ExhibitionController() {
+    // public ProjectController() {
 
     // }
 }
